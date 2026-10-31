@@ -1,4 +1,16 @@
 /* ESTILOS GLOBALES: a diferencia del CSS de cada componente (header.css, footer.css...),
-   lo que se escriba aca afecta a TODA la aplicacion.
-   Por ahora esta vacio: cada componente tiene sus propios estilos. */
-/* You can add global styles to this file, and also import other style files */
+   lo que se escriba aca afecta a TODA la aplicacion. */
+
+/* RESET CSS (CSS I): los navegadores ponen margenes propios al <body>.
+   Los sacamos para que el header y el fondo del login lleguen a los bordes.
+   box-sizing: border-box -> el width incluye padding y borde (mas facil de calcular). */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* Tipografia externa de Google Fonts (link en index.html).
+     Si no carga, usa la siguiente de la lista: Arial y despues cualquier sans-serif. */
+  font-family: 'Poppins', Arial, sans-serif;
+}
