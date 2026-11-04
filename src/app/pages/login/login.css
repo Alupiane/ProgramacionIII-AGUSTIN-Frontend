@@ -1,10 +1,5 @@
 /* Estilos del Login (encapsulados: solo afectan a login.html) */
 
-/* FONDO DE LA PAGINA
-   - linear-gradient (CSS Animaciones y transiciones): degradado de dos azules, sin imagen.
-   - display: flex + justify-content + align-items (CSS Flexbox): centra la tarjeta
-     horizontal y verticalmente.
-   - min-height en vh: ocupa casi toda la altura de la ventana (vh = % del alto de pantalla). */
 main {
   min-height: 80vh;
   display: flex;
@@ -14,11 +9,6 @@ main {
   background: linear-gradient(135deg, #1976d2, #0d47a1);
 }
 
-/* TARJETA BLANCA (CSS Box Model)
-   - width 100% + max-width: en celular ocupa todo el ancho, en PC como maximo 400px.
-   - padding = espacio interno; border-radius = esquinas redondeadas.
-   - box-shadow: sombra para que parezca "flotar" sobre el fondo.
-   - animation: aparece subiendo suavemente (ver @keyframes aparecer al final). */
 .tarjeta {
   width: 100%;
   max-width: 400px;
@@ -44,8 +34,6 @@ h2 {
   font-size: 14px;
 }
 
-/* FORMULARIO EN COLUMNA (CSS Flexbox)
-   flex-direction: column apila los campos uno debajo del otro; gap los separa. */
 form {
   display: flex;
   flex-direction: column;
@@ -71,19 +59,16 @@ input {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  font-family: inherit; /* usa la misma fuente que el resto (Poppins) */
-  transition: border-color 0.2s, box-shadow 0.2s; /* el cambio de :focus es suave */
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* :focus = pseudo-clase: el input en el que esta escribiendo el usuario */
 input:focus {
   outline: none;
   border-color: #1976d2;
-  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2); /* "aro" azul alrededor */
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
 }
 
-/* BOTON (transiciones y transformaciones)
-   transition: anima los cambios de color y posicion al pasar el mouse. */
 button {
   margin-top: 6px;
   padding: 14px;
@@ -98,9 +83,6 @@ button {
   transition: background-color 0.2s, transform 0.2s;
 }
 
-/* :hover = pseudo-clase: cuando el mouse esta encima.
-   :not(:disabled) = solo si el boton NO esta deshabilitado.
-   transform: translateY(-2px) lo sube 2 pixeles (efecto de "levantarse"). */
 button:hover:not(:disabled) {
   background-color: #0d47a1;
   transform: translateY(-2px);
@@ -124,7 +106,7 @@ button:disabled {
   padding: 12px;
   color: #c62828;
   background-color: #ffebee;
-  border-left: 4px solid #c62828; /* borde solo a la izquierda */
+  border-left: 4px solid #c62828;
   border-radius: 6px;
   text-align: center;
 }
@@ -143,7 +125,6 @@ button:disabled {
   margin: 0 0 6px;
 }
 
-/* El token es muy largo: word-break lo corta para que no se salga del recuadro */
 code {
   display: block;
   padding: 8px;
@@ -153,9 +134,6 @@ code {
   font-size: 12px;
 }
 
-/* ANIMACION CON @keyframes (CSS Animaciones y transiciones)
-   from = estado inicial (invisible y 20px mas abajo)
-   to   = estado final (visible y en su lugar) */
 @keyframes aparecer {
   from {
     opacity: 0;

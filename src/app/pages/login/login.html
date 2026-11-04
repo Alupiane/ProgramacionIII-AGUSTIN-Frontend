@@ -1,9 +1,3 @@
-<!--
-  Template del Login.
-  [formGroup]="loginForm": conecta este <form> con el FormGroup definido en login.ts
-  (ngSubmit)="login()": al enviar el formulario se ejecuta el metodo login() del componente
--->
-<!-- <main> = contenido principal. Ocupa toda la pantalla y centra la tarjeta (ver login.css) -->
 <main>
   <!-- <section> agrupa todo el login en una "tarjeta" blanca -->
   <section class="tarjeta">
@@ -12,15 +6,10 @@
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-      <!-- Cada .campo agrupa label + input + error (para separarlos con gap en CSS) -->
       <div class="campo">
-        <!-- for="email" conecta el label con el input id="email" (al tocar el texto se enfoca el input) -->
         <label for="email">Email</label>
-        <!-- formControlName="email": conecta este input con el FormControl "email" -->
         <input id="email" type="email" formControlName="email" placeholder="ejemplo@email.com">
 
-        <!-- @if: muestra el bloque solo si la condicion es verdadera.
-             touched = el usuario ya paso por el campo; hasError = no cumple un Validator -->
         @if (loginForm.controls.email.touched && loginForm.controls.email.hasError('required')) {
           <small class="error">El email es obligatorio.</small>
         }
@@ -39,7 +28,6 @@
         }
       </div>
 
-      <!-- [disabled]: el boton se deshabilita mientras se espera la respuesta de la API -->
       <button type="submit" [disabled]="cargando()">
         {{ cargando() ? 'Ingresando...' : 'Iniciar sesión' }}
       </button>
@@ -53,7 +41,6 @@
     <!-- Login exitoso: se muestra el token recibido -->
     @if (token()) {
       <div class="exito">
-        <!-- {{ }} = interpolacion: muestra el valor de la variable en el HTML -->
         <p><strong>¡Bienvenido/a, {{ usuario() }}!</strong></p>
         <p>Token recibido:</p>
         <code>{{ token() }}</code>
